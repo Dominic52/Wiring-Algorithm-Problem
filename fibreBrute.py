@@ -10,12 +10,12 @@ while run:
         break
 
     maxprofit = 0
-
     for i in range(len(line)):
-        for j in range(1, len(line)):
-            total = 0
-            for k in range(i, j+1):
-                total = total+int(line[k])
+        total = int(line[i])
+        if total > maxprofit:
+            maxprofit = total
+        for j in range(i+1, len(line)):
+            total = total + int(line[j])
             if total > maxprofit:
                 maxprofit = total
 
